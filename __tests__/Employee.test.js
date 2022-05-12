@@ -8,3 +8,10 @@ test('creates an employee object', () =>{
     expect(employee.id).toBe(1);
     expect(employee.email).toBe('al.gurino@gmail.com');
 });
+
+test('gets name value from input', () =>{
+    const input = 'Alex'
+    const employee = new Employee(input);
+
+    expect(employee.getName()).toBe(input);
+});
