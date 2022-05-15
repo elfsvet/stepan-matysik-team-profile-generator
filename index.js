@@ -3,10 +3,10 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const templateData = require('./src/page-template');
-const {writeFile, copyFile} = require('./src/generate-site');
+const { writeFile, copyFile } = require('./src/generate-site');
 const dataArray = [];
 
-
+// questions for manager
 const managerQuestions = [
     {
         type: 'input',
@@ -57,6 +57,7 @@ const managerQuestions = [
     },
 ];
 
+// question for next step
 const addTeamOrFinishQuestion = [
     {
         type: 'list',
@@ -65,6 +66,8 @@ const addTeamOrFinishQuestion = [
         message: "Would you like to add another teammate?",
     },
 ];
+
+// question for engineer
 const engineerQuestions = [
     {
         type: 'input',
@@ -107,6 +110,7 @@ const engineerQuestions = [
     },
 ];
 
+// question for intern
 const internQuestions = [
     {
         type: 'input',
@@ -149,6 +153,7 @@ const internQuestions = [
     },
 ];
 
+// check if the user want to add another teammate or finish the input.
 const addTeamOrFinish = () => {
     return inquirer.prompt(addTeamOrFinishQuestion)
         .then(answer => {
@@ -164,17 +169,16 @@ const addTeamOrFinish = () => {
                     addIntern();
                     break;
                 case 'Finish':
-                    // console.log(templateData(dataArray))
+                    // here needs to be added function of creating a html with all the stuff.
                     writeFile(templateData(dataArray));
                     copyFile();
-                    console.log('You chose Finish');
-                    // here needs to be added function of creating a html with all the stuff.
+                    console.log('You chose Finish. Check the dist folder');
                     break;
             }
         })
-}
+};
 
-
+// will add manager function to run questions and get answers and continue ask question until diced to stop will present a html page and a copy of the style.css 
 const addManager = () => {
     //clean the array before start
     dataArray.length = 0;
@@ -189,6 +193,7 @@ const addManager = () => {
         })
 };
 
+// add engineer function to run questions and get answers
 const addEngineer = () => {
     return inquirer.prompt(engineerQuestions)
         .then(answers => {
@@ -201,8 +206,9 @@ const addEngineer = () => {
             addTeamOrFinish();
         })
 
-}
+};
 
+// add intern function to run questions and get answers
 const addIntern = () => {
     return inquirer.prompt(internQuestions)
         .then(answers => {
@@ -215,7 +221,7 @@ const addIntern = () => {
             addTeamOrFinish();
         })
 }
-
+// Run the main function to build a html
 addManager();
 
 
