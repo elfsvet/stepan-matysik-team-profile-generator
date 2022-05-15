@@ -33,7 +33,7 @@ const generateCard = data => {
 <div class="card m-2 shadow-sm" id="" style="width: 18rem;">
   <div class="card-header bg-primary text-white">
       <h2 class="">${data.getName()}</h2>
-      <h3 class="">Role: ${data.getRole()} ${addIcon(data)}</h3>
+      <h3 class="">${data.getRole()} ${addIcon(data)}</h3>
   </div>
   <div class="card-body bg-light">
       <ul class="list-group bg-white">

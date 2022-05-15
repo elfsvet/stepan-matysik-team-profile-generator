@@ -26,7 +26,7 @@ const managerQuestions = [
         name: 'id',
         message: "What is the team manager's id?",
         validate: (input) => {
-            if (isNaN(input)) {
+            if (isNaN(parseInt(input))) {
                 return 'Please enter an id number';
             }
             return true;
@@ -49,8 +49,8 @@ const managerQuestions = [
         name: 'officeNumber',
         message: "What is the team manager's office number?",
         validate: (input) => {
-            if (isNaN(input)) {
-                return 'Please enter an id number';
+            if (isNaN(parseInt(input))) {
+                return 'Please enter an office number';
             }
             return true;
         }
@@ -82,7 +82,7 @@ const engineerQuestions = [
         name: 'id',
         message: "What is the team engineer's id?",
         validate: (input) => {
-            if (isNaN(input)) {
+            if (isNaN(parseInt(input))) {
                 return 'Please enter an id number';
             }
             return true;
@@ -125,7 +125,7 @@ const internQuestions = [
         name: 'id',
         message: "What is the team intern's id?",
         validate: (input) => {
-            if (isNaN(input)) {
+            if (isNaN(parseInt(input))) {
                 return 'Please enter an id number';
             }
             return true;
@@ -188,7 +188,7 @@ const addManager = () => {
             const { name, id, email, officeNumber } = answers;
             const manager = new Manager(name, id, email, officeNumber);
             dataArray.push(manager);
-            console.log(manager);
+            // console.log(manager);
             addTeamOrFinish();
         })
 };
@@ -202,7 +202,7 @@ const addEngineer = () => {
             const { name, id, email, github } = answers;
             const engineer = new Engineer(name, id, email, github);
             dataArray.push(engineer);
-            console.log(engineer);
+            // console.log(engineer);
             addTeamOrFinish();
         })
 
@@ -217,7 +217,7 @@ const addIntern = () => {
             const { name, id, email, school } = answers;
             const engineer = new Intern(name, id, email, school);
             dataArray.push(engineer);
-            console.log(engineer);
+            // console.log(engineer);
             addTeamOrFinish();
         })
 }
