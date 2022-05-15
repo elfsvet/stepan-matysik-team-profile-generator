@@ -1,5 +1,7 @@
 const fs = require('fs');
+
 // first Java Script Promise
+
 const writeFile = fileContent => {
     return new Promise((resolve, reject) => {
         fs.writeFile('./dist/index.html', fileContent, err => {
@@ -13,7 +15,7 @@ const writeFile = fileContent => {
             // if everything went well, resolve the Promise and send the successful data to the `.then()` method
             resolve({
                 ok: true,
-                message: 'File created!'
+                message: 'Your team profile file has been created!'
             });
         });
     });
