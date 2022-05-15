@@ -26,6 +26,7 @@ const managerQuestions = [
         name: 'id',
         message: "What is the team manager's id?",
         validate: (input) => {
+            // to make sure input is number and not an empty string
             if (isNaN(parseInt(input))) {
                 return 'Please enter an id number';
             }
