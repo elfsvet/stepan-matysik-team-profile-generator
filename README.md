@@ -56,6 +56,8 @@ $node index.js
 ## Screenshots
 ![Example screenshot](./src/images/screen-shot.png)
 
+If you haven't checked the link to the video with the application process please [CLICK HERE ⬇️](https://youtu.be/A1Pvhj1zYf8)
+
 
 ## Usage
 For creating a team and have easy access to the contact information.
